@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoRent Apartments Mostar | Luxury Guest Guide</title>
+  <meta name="description" content="Bilingual guest guide for MoRent Apartments Mostar with check-in, location, parking, Wi‑Fi, amenities, rules, and local recommendations." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="MoRent Apartments Mostar | Guest Guide" />
+  <meta property="og:description" content="Launch-ready premium bilingual guest information website for MoRent Apartments Mostar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cf.bstatic.com/xdata/images/hotel/max1024x768/598742153.jpg?k=22e53ff16eeb0721c3ad7c0fcf1c13c8f02486b04b79a25534dc7cff9cd406a2&o=" />
+  <style>
+    :root{
+      --bg:#000;
+      --bg2:#0d0d0d;
+      --panel:#111;
+      --panel2:#181818;
+      --line:#2f2f2f;
+      --soft:#8e8e93;
+      --text:#fff;
+      --muted:#c7c7cc;
+      --accent:#f2f2f2;
+      --pill:#1f1f1f;
+      --shadow:0 20px 60px rgba(0,0,0,.52);
+      --radius:28px;
+      --radius-sm:20px;
+      --max:1220px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.07), transparent 25%),
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.04), transparent 18%),
+        linear-gradient(180deg, #000 0%, #060606 40%, #000 100%);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(var(--max),calc(100% - 28px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:70;
+      background:rgba(0,0,0,.78);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo img{height:58px;width:auto;display:block}
+    @media (max-width:760px){.logo img{height:48px}}
+    .brand-copy strong{display:block;font-size:1rem;letter-spacing:.01em}
+    .brand-copy span{display:block;color:var(--soft);font-size:.82rem}
+    .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a{
+      text-decoration:none;color:var(--muted);font-size:.92rem;
+      padding:8px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.03)
+    }
+    .lang-switch{display:inline-flex;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px;background:#111}
+    .lang-switch button{border:0;background:transparent;color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer}
+    .lang-switch button.active{background:#fff;color:#000}
+    .hero{padding:28px 0 22px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow)
+    }
+    .hero-copy{padding:38px;display:flex;flex-direction:column;justify-content:center;gap:20px;min-height:100%}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;width:fit-content;
+      padding:7px 12px;border-radius:999px;background:#131313;border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.85rem
+    }
+    h1,h2,h3{margin:0;line-height:1.12}
+    h1{font-size:clamp(2.3rem,5vw,4.4rem);letter-spacing:-.035em;max-width:11ch}
+    h2{font-size:clamp(1.45rem,3vw,2.1rem);letter-spacing:-.02em}
+    h3{font-size:1.02rem}
+    p{margin:0}
+    .lead{font-size:clamp(1rem,2vw,1.15rem);color:#ddd;max-width:60ch}
+    .chip-row{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{padding:9px 12px;border-radius:999px;background:var(--pill);border:1px solid rgba(255,255,255,.08);font-size:.92rem;color:#f5f5f5}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:0 18px;border-radius:999px;text-decoration:none;
+      border:1px solid rgba(255,255,255,.1);font-weight:700;transition:transform .18s ease,background .18s ease
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:#fff;color:#000}
+    .btn-secondary{background:#121212;color:#fff}
+    .hero-media{position:relative;overflow:hidden;min-height:400px}
+    .hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(1.02) contrast(1.02)}
+    .hero-badge{
+      position:absolute;left:14px;right:14px;bottom:14px;
+      padding:14px 16px;border-radius:16px;background:rgba(0,0,0,.62);
+      backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1)
+    }
+    .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+    .mini-card{padding:18px}
+    .icon-box{width:42px;height:42px;border-radius:14px;background:#161616;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;margin-bottom:12px}
+    .section-head h2::after{content:"";display:block;width:58px;height:2px;margin-top:12px;background:linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.15));border-radius:999px}
+    main{padding:8px 0 92px}
+    section.section{padding:28px;margin-bottom:18px;scroll-margin-top:88px}
+    .section-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .section-head p{color:var(--soft)}
+    .grid-2,.grid-3,.grid-4{display:grid;gap:16px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .info-card{padding:22px;height:100%;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02))}
+    .muted,.subtle{color:var(--soft)}
+    ul{margin:10px 0 0;padding-left:18px}
+    li{margin:6px 0}
+    .gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+    .gallery-stack{display:grid;gap:14px}
+    .gallery-card{position:relative;overflow:hidden;border-radius:22px;border:1px solid rgba(255,255,255,.08);min-height:280px;background:#090909}
+    .gallery-card img{width:100%;height:100%;object-fit:cover}
+    .caption{position:absolute;left:12px;right:12px;bottom:12px;padding:10px 12px;border-radius:14px;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);font-size:.92rem}
+    .map-wrap{overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,.08);min-height:360px}
+    iframe{width:100%;height:100%;min-height:360px;border:0}
+    .steps .info-card{position:relative;padding-top:56px}
+    .step-no{position:absolute;left:20px;top:18px;width:28px;height:28px;border-radius:999px;background:#fff;color:#000;display:grid;place-items:center;font-size:.9rem;font-weight:800}
+    .callout{padding:16px;border-radius:18px;background:#101010;border:1px solid rgba(255,255,255,.08)}
+    .video-placeholder{
+      min-height:280px;border-radius:22px;border:1px dashed rgba(255,255,255,.18);
+      background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      display:grid;place-items:center;text-align:center;padding:26px
+    }
+    .video-player{display:grid;gap:16px}
+    .video-player video{width:100%;display:block;border-radius:20px;border:1px solid rgba(255,255,255,.08);background:#050505;box-shadow:var(--shadow);max-height:720px}
+    .video-meta{display:flex;flex-direction:column;gap:12px}
+    .play-ring{width:84px;height:84px;border-radius:999px;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;margin:0 auto 16px;background:rgba(255,255,255,.04)}
+    .play-ring span{font-size:1.65rem;margin-left:4px}
+    .faq-list{display:grid;gap:12px}
+    .faq-item{overflow:hidden}
+    .faq-q{width:100%;padding:16px 18px;background:transparent;border:0;color:#fff;text-align:left;font:inherit;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .faq-a{display:none;padding:0 18px 18px;color:#ddd}
+    .faq-item.open .faq-a{display:block}
+    .mobile-bar{
+      position:fixed;left:12px;right:12px;bottom:12px;z-index:80;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+      padding:10px;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.08);border-radius:22px;box-shadow:var(--shadow)
+    }
+    .mobile-bar a{text-decoration:none;text-align:center;padding:10px 8px;border-radius:16px;background:#161616;border:1px solid rgba(255,255,255,.06);font-size:.88rem;font-weight:700}
+    .mobile-bar a.primary{background:#fff;color:#000}
+    footer{padding:14px 0 34px;color:var(--soft)}
+    .footer-card{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media (max-width:980px){
+      .hero-grid,.gallery,.grid-4,.quick-grid{grid-template-columns:1fr 1fr}
+      .grid-3{grid-template-columns:1fr}
+    }
+    @media (max-width:760px){
+      .topbar-inner,.section-head,.footer-card{display:block}
+      .controls{margin-top:12px;justify-content:flex-start}
+      .nav-links{margin-bottom:10px}
+      .hero-grid,.gallery,.quick-grid,.grid-2,.grid-4{grid-template-columns:1fr}
+      .hero-copy,.mini-card,.info-card,section.section{padding:18px}
+      .hero-media{min-height:280px}
+      main{padding-bottom:110px}
+    }
+    @media (min-width:761px){
+      .mobile-bar{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-label="MoRent logo">
+          <img src="./assets/morent-logo.png" alt="MoRent Apartments Mostar logo" />
+          <div class="brand-copy">
+            <strong>MoRent</strong>
+            <span id="topbar-subtitle">Apartments Mostar • Guest Guide</span>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <nav class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#arrival">Arrival</a>
+          <a href="#location">Location</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="lang-switch">
+          <button class="active" data-lang="en">EN</button>
+          <button data-lang="hr">HR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="card hero-copy">
+          <div class="eyebrow" id="hero-eyebrow">Premium guest guide</div>
+          <h1 id="hero-title">Everything your guests need in one elegant mobile guide</h1>
+          <p class="lead" id="hero-text"></p>
+          <div class="chip-row" id="hero-chips"></div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://maps.app.goo.gl/MP2WdNXjSoyDNwwU7?g_st=ic" target="_blank" rel="noopener" id="hero-cta-map">Open exact location</a>
+            <a class="btn btn-secondary" href="#arrival" id="hero-cta-arrival">View arrival steps</a>
+          </div>
+        </div>
+        <div class="card hero-media">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/598742153.jpg?k=22e53ff16eeb0721c3ad7c0fcf1c13c8f02486b04b79a25534dc7cff9cd406a2&o=" alt="MoRent apartment interior" />
+          <div class="hero-badge" id="hero-badge"></div>
+        </div>
+      </div>
+      <div class="quick-grid" id="quick-grid"></div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="section card" id="overview">
+        <div class="section-head">
+          <div class="icon-box">🏡</div>
+          <div>
+            <h2 id="overview-title"></h2>
+            <p id="overview-intro"></p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card info-card">
+            <h3 id="overview-card-a-title"></h3>
+            <p id="overview-card-a-text"></p>
+            <div class="chip-row" id="overview-card-a-chips" style="margin-top:14px"></div>
+          </div>
+          <div class="card info-card">
+            <h3 id="overview-card-b-title"></h3>
+            <ul id="overview-card-b-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="gallery">
+        <div class="section-head">
+          <div class="icon-box">🖼️</div>
+          <div>
+            <h2 id="gallery-title"></h2>
+            <p id="gallery-intro"></p>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="gallery-card">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/598742153.jpg?k=22e53ff16eeb0721c3ad7c0fcf1c13c8f02486b04b79a25534dc7cff9cd406a2&o=" alt="Studio interior" />
+            <div class="caption" id="gallery-cap-1"></div>
+          </div>
+          <div class="gallery-stack">
+            <div class="gallery-card">
+              <img src="https://cf.bstatic.com/xdata/images/hotel/max500/598742110.jpg?k=cbabac4e8e9673a46de44d34d96a68d9da75d1cdb1673c06fd4d720737b77ec9&o=" alt="Bedroom" />
+              <div class="caption" id="gallery-cap-2"></div>
+            </div>
+            <div class="gallery-card">
+              <img src="https://cf.bstatic.com/xdata/images/hotel/max500/598742287.jpg?k=e0ee085e16b40b86ed7f304d963785ff57fcfce0d62fd35a78c415dca7682b86&o=" alt="Bathroom" />
+              <div class="caption" id="gallery-cap-3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="arrival">
+        <div class="section-head">
+          <div class="icon-box">🔐</div>
+          <div>
+            <h2 id="arrival-title"></h2>
+            <p id="arrival-intro"></p>
+          </div>
+        </div>
+        <div class="grid-3 steps">
+          <div class="card info-card">
+            <div class="step-no">1</div>
+            <h3 id="arrival-step-1-title"></h3>
+            <p id="arrival-step-1-text"></p>
+          </div>
+          <div class="card info-card">
+            <div class="step-no">2</div>
+            <h3 id="arrival-step-2-title"></h3>
+            <p id="arrival-step-2-text"></p>
+          </div>
+          <div class="card info-card">
+            <div class="step-no">3</div>
+            <h3 id="arrival-step-3-title"></h3>
+            <p id="arrival-step-3-text"></p>
+          </div>
+        </div>
+        <div class="callout" id="arrival-note" style="margin-top:14px"></div>
+      </section>
+
+      <section class="section card" id="video">
+        <div class="section-head">
+          <div class="icon-box">🎥</div>
+          <div>
+            <h2 id="video-title"></h2>
+            <p id="video-intro"></p>
+          </div>
+        </div>
+        <div class="video-player">
+          <video controls playsinline preload="metadata" aria-label="Entrance video">
+            <source src="./assets/morent-entrance.mp4" type="video/mp4" />
+            <source src="./assets/morent-entrance.mov" type="video/quicktime" />
+            Your browser does not support embedded video.
+          </video>
+          <div class="subtle" style="font-size:.92rem">If video playback is unavailable in your browser, use the GitHub package version or the MP4 asset directly.</div>
+          <div class="video-meta">
+            <div>
+              <h3 id="video-placeholder-title"></h3>
+              <p class="subtle" id="video-placeholder-text" style="max-width:70ch;margin-top:10px"></p>
+            </div>
+            <div class="chip-row">
+              <span class="chip" id="video-chip-1"></span>
+              <span class="chip" id="video-chip-2"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="location">
+        <div class="section-head">
+          <div class="icon-box">📍</div>
+          <div>
+            <h2 id="location-title"></h2>
+            <p id="location-intro"></p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card info-card">
+            <h3 id="location-card-title"></h3>
+            <p id="location-card-text"></p>
+            <div class="chip-row" id="location-card-chips" style="margin-top:14px"></div>
+            <div class="cta-row" style="margin-top:16px">
+              <a class="btn btn-primary" href="https://maps.app.goo.gl/MP2WdNXjSoyDNwwU7?g_st=ic" target="_blank" rel="noopener" id="location-btn-1"></a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=SPC+Orca,+Kneza+Vi%C5%A1eslava+bb,+Mostar" target="_blank" rel="noopener" id="location-btn-2"></a>
+            </div>
+          </div>
+          <div class="map-wrap">
+            <iframe title="Map to MoRent Apartments Mostar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=SPC+Orca,+Kneza+Vi%C5%A1eslava+bb,+Mostar+88000,+Bosnia+and+Herzegovina&output=embed"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="parking">
+        <div class="section-head">
+          <div class="icon-box">🅿️</div>
+          <div>
+            <h2 id="parking-title"></h2>
+            <p id="parking-intro"></p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card info-card">
+            <h3 id="parking-card-a-title"></h3>
+            <ul id="parking-list"></ul>
+          </div>
+          <div class="card info-card">
+            <h3 id="parking-card-b-title"></h3>
+            <p id="parking-card-b-text"></p>
+            <div class="cta-row" style="margin-top:16px">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Mepas+Mall+Mostar" target="_blank" rel="noopener" id="parking-btn-1"></a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Kneza+Vi%C5%A1eslava+Mostar" target="_blank" rel="noopener" id="parking-btn-2"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="essentials">
+        <div class="section-head">
+          <div class="icon-box">📶</div>
+          <div>
+            <h2 id="essentials-title"></h2>
+            <p id="essentials-intro"></p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card info-card">
+            <h3 id="wifi-title"></h3>
+            <ul id="wifi-list"></ul>
+          </div>
+          <div class="card info-card">
+            <h3 id="amenities-title"></h3>
+            <ul id="amenities-list"></ul>
+          </div>
+          <div class="card info-card">
+            <h3 id="rules-title"></h3>
+            <ul id="rules-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="checkout">
+        <div class="section-head">
+          <div class="icon-box">🔑</div>
+          <div>
+            <h2 id="checkout-title"></h2>
+            <p id="checkout-intro"></p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card info-card">
+            <h3 id="checkout-card-a-title"></h3>
+            <ul id="checkout-list"></ul>
+          </div>
+          <div class="card info-card">
+            <h3 id="checkout-card-b-title"></h3>
+            <p id="checkout-card-b-text"></p>
+            <div class="callout" id="checkout-note" style="margin-top:14px"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="explore">
+        <div class="section-head">
+          <div class="icon-box">✨</div>
+          <div>
+            <h2 id="explore-title"></h2>
+            <p id="explore-intro"></p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card info-card">
+            <h3 id="explore-card-a-title"></h3>
+            <ul id="explore-attractions"></ul>
+          </div>
+          <div class="card info-card">
+            <h3 id="explore-card-b-title"></h3>
+            <ul id="explore-food"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="qr">
+        <div class="section-head">
+          <div class="icon-box">▣</div>
+          <div>
+            <h2 id="qr-title"></h2>
+            <p id="qr-intro"></p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card info-card">
+            <h3 id="qr-card-a-title"></h3>
+            <p id="qr-card-a-text"></p>
+            <ul id="qr-card-a-list"></ul>
+          </div>
+          <div class="card info-card">
+            <h3 id="qr-card-b-title"></h3>
+            <p id="qr-card-b-text"></p>
+            <div class="video-placeholder" style="min-height:190px;margin-top:14px">
+              <div>
+                <div class="play-ring" style="width:68px;height:68px"><span>▣</span></div>
+                <h3 id="qr-placeholder-title"></h3>
+                <p class="subtle" id="qr-placeholder-text" style="margin-top:8px"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="contact">
+        <div class="section-head">
+          <div class="icon-box">☎️</div>
+          <div>
+            <h2 id="contact-title"></h2>
+            <p id="contact-intro"></p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card info-card">
+            <h3 id="contact-card-a-title"></h3>
+            <p><a href="tel:+38763314543">+387 (63) 314-543</a></p>
+          </div>
+          <div class="card info-card">
+            <h3 id="contact-card-b-title"></h3>
+            <p><a href="tel:+38763437415">+387 (63) 437-415</a></p>
+          </div>
+          <div class="card info-card">
+            <h3 id="contact-card-c-title"></h3>
+            <ul id="emergency-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section card" id="faq">
+        <div class="section-head">
+          <div class="icon-box">❓</div>
+          <div>
+            <h2 id="faq-title"></h2>
+            <p id="faq-intro"></p>
+          </div>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-card">
+      <div><strong>MoRent Apartments Mostar</strong><div id="footer-left"></div></div>
+      <div id="footer-right"></div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a class="primary" href="https://maps.app.goo.gl/MP2WdNXjSoyDNwwU7?g_st=ic" target="_blank" rel="noopener" id="mbar-map">Map</a>
+    <a href="tel:+38763314543" id="mbar-call">Call</a>
+    <a href="#essentials" id="mbar-wifi">Wi‑Fi</a>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LodgingBusiness",
+    "name":"MoRent Apartments Mostar",
+    "telephone":["+38763314543","+38763437415"],
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"SPC Orca, Kneza Višeslava bb, Lamela 7",
+      "addressLocality":"Mostar",
+      "postalCode":"88000",
+      "addressCountry":"BA"
+    },
+    "amenityFeature":[
+      {"@type":"LocationFeatureSpecification","name":"Free WiFi","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Netflix","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Air conditioning","value":true}
+    ]
+  }
+  </script>
+  <script>
+    const data={
+      en:{
+        title:'MoRent Apartments Mostar | Luxury Guest Guide',
+        desc:'Luxury bilingual guest guide for MoRent Apartments Mostar with check-in, location, parking, Wi‑Fi, amenities, house rules, and local recommendations.',
+        nav:['Overview','Arrival','Location','Contact'],
+        topbarSubtitle:'Apartments Mostar • Guest Guide',
+        heroEyebrow:'Luxury guest guide',
+        heroTitle:'A polished arrival-to-checkout guide for MoRent guests',
+        heroText:'Refined for launch: a mobile-first guest journey with clear directions, elegant presentation, self check-in guidance, Wi‑Fi details, amenities, and support contacts.',
+        heroChips:['Check-in from 14:00','Check-out by 11:00','First floor','Apartment 1 / Apartment 2'],
+        heroCtaMap:'Open exact location',
+        heroCtaArrival:'View arrival steps',
+        heroBadge:'A launch-ready guest experience for MoRent Apartments Mostar with refined branding, self check-in clarity, and stronger mobile usability.',
+        quick:[
+          ['📍','Exact location','SPC Orca, Lamela 7, south side entrance.'],
+          ['🔐','Key safe','Pick up the key from the matching mini safe near the mailboxes.'],
+          ['📶','Wi‑Fi','Network: MoRent Apartments · Password: 27596057.'],
+          ['☎️','Host support','Maria and Damir are one tap away when needed.']
+        ],
+        overviewTitle:'Property overview',
+        overviewIntro:'The essentials first, so guests can settle in quickly and confidently.',
+        overviewA1:'What to know before arrival',
+        overviewA2:'The apartments are on the first floor. Your door is labeled Apartment 1 or Apartment 2, and the matching key is stored in the labeled mini safe at the building entrance.',
+        overviewChips:['Self check-in','Premium black & wood interior','Free Wi‑Fi','Netflix included'],
+        overviewB1:'At a glance',
+        overviewBList:['Entrance: Section 7 / Lamela 7','Code for the mini safe is sent on arrival day','Blue RFID chip opens the entrance','Return the key to the same safe at check-out','Payment can be made at the property'],
+        galleryTitle:'Visual overview',
+        galleryIntro:'A clean visual preview helps guests feel reassured before they arrive.',
+        galleryCaps:['Open-plan apartment with kitchenette, sofa, sleeping area, and TV.','Calm bedroom setup with soft textiles and warm light.','Modern bathroom with mirror, sink, and towel rail.'],
+        arrivalTitle:'How to arrive and check in',
+        arrivalIntro:'The arrival flow is simple when presented step by step.',
+        arrival1T:'Find Entrance 7',
+        arrival1X:'Go to the south side of the Orca building and look for Entrance 7 / Lamela 7. The apartments are on the first floor.',
+        arrival2T:'Open the correct mini safe',
+        arrival2X:'Next to the mailboxes you will see mini safes for Apartment 1 and Apartment 2. Use the 4-digit code sent on the day of arrival to open the correct one and collect the key.',
+        arrival3T:'Tap the blue chip',
+        arrival3X:'Use the blue chip attached to the key on the reader/intercom spot to open the main entrance. If you use the stairs, tap it again to access the first-floor area.',
+        arrivalNote:'If the reader light turns green, the door is unlocked. Keep the key and blue chip together during your stay.',
+        videoTitle:'How to find the entrance',
+        videoIntro:'A short arrival video is now included to help guests recognize the building approach, the correct entrance, and the mini safe area.',
+        videoPH1:'Arrival video guide',
+        videoPH2:'This video helps guests spot the building approach, Entrance 7, the mailbox area, and the key safe location before they arrive at the door.',
+        videoChip1:'Includes real entrance footage',
+        videoChip2:'Tap to play with sound if needed',
+        locationTitle:'Address and location',
+        locationIntro:'Clear location details reduce guest confusion and support smoother late arrivals.',
+        locationCardT:'Where to go',
+        locationCardX:'MoRent Apartments Mostar<br>SPC Orca, Kneza Višeslava bb<br>Lamela 7 / Entrance 7<br>88000 Mostar, Bosnia & Herzegovina',
+        locationChips:['South-side entrance','Near Mepas Mall','First-floor apartments'],
+        locationBtn1:'Open exact location',
+        locationBtn2:'Google Maps search',
+        parkingTitle:'Parking information',
+        parkingIntro:'Guests have multiple parking choices around the building.',
+        parkingA:'Parking options',
+        parkingList:['Free parking on the north and east sides of the building.','City parking on Kneza Višeslava Street and near the sports hall.','Private paid parking on the west side of the building.','Additional paid parking south of the building near the sports hall.','Mepas Mall parking is around 50 meters away and works well as a backup option.'],
+        parkingB:'Helpful tip',
+        parkingBX:'If free spaces are busy, Mepas Mall is the easiest fallback. Guests should still check local signs or city parking rules before leaving the vehicle.',
+        parkingBtn1:'Open Mepas Mall',
+        parkingBtn2:'Open street area',
+        essentialsTitle:'Wi‑Fi, amenities, and house rules',
+        essentialsIntro:'The most frequently used stay details are grouped together for faster scanning on mobile.',
+        wifiTitle:'Wi‑Fi',
+        wifiList:['Network: MoRent Apartments','Password: 27596057','Free internet is available in the apartment'],
+        amenitiesTitle:'Amenities',
+        amenitiesList:['Air conditioner for heating and cooling','2 LCD TVs with free Netflix access','Coffee machine','Refrigerator with mini freezer','Oven with built-in microwave','Stove','Dishwasher','Electric kettle','Washing machine','Iron, ironing board, and drying rack','Hair dryer','Extra bedding and pillows in the closet','Extra towels in the bathroom cabinet'],
+        rulesTitle:'House rules',
+        rulesList:['No smoking inside the apartment','Pets are not allowed','If you use the sofa bed, the extra bedding should be set up by the guest','Please keep the key and blue chip secure'],
+        checkoutTitle:'Check-out and payment',
+        checkoutIntro:'Simple departure steps make the turnover easier for both host and guest.',
+        checkoutA:'Before leaving',
+        checkoutList:['Check-out time is 11:00','Return the key to the same mini safe','Scramble the safe numbers after locking it','Take all personal belongings with you','Leave the apartment tidy before departure'],
+        checkoutB:'Payment at the property',
+        checkoutBX:'If convenient, guests may leave payment on the bedside table in the bedroom at check-out. If they prefer to pay in person, they should contact the hosts in advance.',
+        checkoutNote:'Please keep the 11:00 check-out time in mind even if payment is being arranged personally.',
+        exploreTitle:'Nearby attractions and recommendations',
+        exploreIntro:'Helpful suggestions that support both convenience and local discovery.',
+        exploreA:'Nearby attractions',
+        exploreAT:['Old Bridge Mostar','Kujundžiluk Bazar','Muslibegovic House','Mepas Mall for shopping, cinema, and convenient parking'],
+        exploreB:'Nearby food ideas',
+        exploreBT:['Restoran Bura','Blok bar & restaurant','88brunch&bar','MEGI Le Petit Restaurant','Del Rio'],
+        qrTitle:'QR code plan',
+        qrIntro:'Keep the guide easy to access by linking it from print materials and the apartment itself.',
+        qrA:'Recommended QR strategy',
+        qrAX:'Use one primary QR code for the full guest guide after publishing the site. Add it to a bedside card, framed sign, or check-in message.',
+        qrAL:['Primary use: full guest guide','Optional extra QR: entrance video only','Optional extra QR: Wi‑Fi + contact quick card'],
+        qrB:'Placeholder block',
+        qrBX:'This section can later hold the final scannable QR image for the live GitHub Pages URL.',
+        qrPH1:'QR placeholder',
+        qrPH2:'Replace with final published QR after deployment',
+        contactTitle:'Contacts and emergency numbers',
+        contactIntro:'Important support details should be visible and tap-friendly.',
+        contactA:'Maria',
+        contactB:'Damir',
+        contactC:'Emergency numbers',
+        emergency:['General emergency: 112','Police: 122','Fire: 123','Ambulance: 124'],
+        faqTitle:'FAQ',
+        faqIntro:'Fast answers to common guest questions.',
+        faq:[
+          ['What time is check-in?','Check-in is available from 14:00.'],
+          ['Where are the keys?','The keys are in the labeled mini safe near the entrance and mailboxes.'],
+          ['How do I enter the building?','Use the blue chip attached to the key and tap it on the designated reader/intercom area.'],
+          ['What is the Wi‑Fi password?','The Wi‑Fi network is MoRent Apartments and the password is 27596057.'],
+          ['What time is check-out?','Check-out is at 11:00. Return the key to the same mini safe and scramble the code numbers.'],
+          ['Can I pay at the property?','Yes. Guests may leave payment on the bedside table or arrange payment in person with the hosts.']
+        ],
+        footerLeft:'Launch-ready luxury bilingual guest guide designed for mobile use.',
+        footerRight:'Tip: once published, add a final QR code and share this guide in pre-arrival messages.',
+        mbarMap:'Map',mbarCall:'Call',mbarWifi:'Wi‑Fi'
+      },
+      hr:{
+        title:'MoRent Apartments Mostar | Luksuzni vodič za goste',
+        desc:'Luksuzni dvojezični vodič za goste apartmana MoRent Apartments Mostar s prijavom, lokacijom, parkingom, Wi‑Fi podacima, sadržajima, pravilima i preporukama.',
+        nav:['Pregled','Dolazak','Lokacija','Kontakt'],
+        topbarSubtitle:'Apartments Mostar • Vodič za goste',
+        heroEyebrow:'Luksuzni vodič za goste',
+        heroTitle:'Uglađen vodič od dolaska do odjave za goste MoRent-a',
+        heroText:'Doradeno za završnu objavu: mobilni vodič s jasnim uputama, elegantnim prikazom, samostalnom prijavom, Wi‑Fi podacima, sadržajima i kontaktima za pomoć.',
+        heroChips:['Prijava od 14:00','Odjava do 11:00','Prvi kat','Apartment 1 / Apartment 2'],
+        heroCtaMap:'Otvori točnu lokaciju',
+        heroCtaArrival:'Pogledaj dolazak',
+        heroBadge:'Vodič spreman za objavu za MoRent Apartments Mostar s profinjenim brendingom, jasnom samostalnom prijavom i jačim mobilnim iskustvom.',
+        quick:[
+          ['📍','Točna lokacija','SPC Orca, Lamela 7, ulaz s južne strane.'],
+          ['🔐','Mini sef','Ključ se preuzima iz odgovarajućeg mini sefa kod sandučića.'],
+          ['📶','Wi‑Fi','Mreža: MoRent Apartments · Lozinka: 27596057.'],
+          ['☎️','Pomoć domaćina','Maria i Damir dostupni su jednim dodirom kada zatreba.']
+        ],
+        overviewTitle:'Pregled smještaja',
+        overviewIntro:'Najvažnije informacije prvo, kako bi se gosti brzo i sigurno snašli.',
+        overviewA1:'Što trebate znati prije dolaska',
+        overviewA2:'Apartmani se nalaze na prvom katu. Vrata su označena kao Apartment 1 ili Apartment 2, a odgovarajući ključ nalazi se u označenom mini sefu kod ulaza u zgradu.',
+        overviewChips:['Samostalna prijava','Premium crno-drveni interijer','Besplatan Wi‑Fi','Netflix uključen'],
+        overviewB1:'Ukratko',
+        overviewBList:['Ulaz: Section 7 / Lamela 7','Kod za mini sef šalje se na dan dolaska','Plavi RFID čip otvara ulaz','Ključ se pri odjavi vraća u isti sef','Plaćanje je moguće u objektu'],
+        galleryTitle:'Vizualni pregled',
+        galleryIntro:'Kratki vizualni pregled ulijeva povjerenje gostima prije dolaska.',
+        galleryCaps:['Otvoreni raspored apartmana s kuhinjom, sofom, krevetom i TV-om.','Mirna spavaća zona s toplim svjetlom i mekanim tekstilom.','Moderna kupaonica s ogledalom, umivaonikom i držačem za ručnike.'],
+        arrivalTitle:'Kako doći i kako se prijaviti',
+        arrivalIntro:'Dolazak je jednostavan kada je prikazan korak po korak.',
+        arrival1T:'Pronađite Ulaz 7',
+        arrival1X:'Dođite na južnu stranu zgrade Orca i potražite Ulaz 7 / Lamelu 7. Apartmani se nalaze na prvom katu.',
+        arrival2T:'Otvorite odgovarajući mini sef',
+        arrival2X:'Pored poštanskih sandučića nalaze se mini sefovi za Apartment 1 i Apartment 2. Unesite četveroznamenkasti kod koji dobijete na dan dolaska i uzmite ključ iz odgovarajućeg sefa.',
+        arrival3T:'Prislonite plavi čip',
+        arrival3X:'Plavi čip koji je pričvršćen na ključ prislonite na čitač/interfon za otvaranje glavnog ulaza. Ako koristite stepenice, ponovno ga prislonite za pristup prvom katu.',
+        arrivalNote:'Ako lampica na čitaču zasvijetli zeleno, vrata su otključana. Ključ i plavi čip uvijek držite zajedno.',
+        videoTitle:'Kako pronaći ulaz',
+        videoIntro:'Uključen je kratki video dolaska kako bi gosti lakše prepoznali prilaz zgradi, pravi ulaz i mjesto mini sefa.',
+        videoPH1:'Video vodič za dolazak',
+        videoPH2:'Ovaj video pomaže gostima da unaprijed prepoznaju prilaz zgradi, Ulaz 7, prostor sa sandučićima i mjesto gdje se nalazi sef s ključem.',
+        videoChip1:'Uključen je stvarni video ulaza',
+        videoChip2:'Dodirnite za reprodukciju po potrebi',
+        locationTitle:'Adresa i lokacija',
+        locationIntro:'Jasni detalji o lokaciji smanjuju zabunu i olakšavaju kasne dolaske.',
+        locationCardT:'Kamo doći',
+        locationCardX:'MoRent Apartments Mostar<br>SPC Orca, Kneza Višeslava bb<br>Lamela 7 / Ulaz 7<br>88000 Mostar, Bosna i Hercegovina',
+        locationChips:['Ulaz s južne strane','Blizu Mepas Mall-a','Apartmani na prvom katu'],
+        locationBtn1:'Otvori točnu lokaciju',
+        locationBtn2:'Google Maps pretraga',
+        parkingTitle:'Informacije o parkingu',
+        parkingIntro:'Gosti imaju više opcija za parkiranje oko zgrade.',
+        parkingA:'Opcije parkiranja',
+        parkingList:['Besplatan parking nalazi se na sjevernoj i istočnoj strani zgrade.','Gradski parking nalazi se u Ulici kneza Višeslava i kod sportske dvorane.','Privatni parking uz naplatu nalazi se na zapadnoj strani zgrade.','Dodatni parking uz naplatu nalazi se južno od zgrade kod sportske dvorane.','Parking Mepas Mall-a udaljen je oko 50 metara i praktična je rezervna opcija.'],
+        parkingB:'Koristan savjet',
+        parkingBX:'Ako su besplatna mjesta zauzeta, Mepas Mall je najjednostavnija rezervna opcija. Gosti ipak trebaju provjeriti lokalnu signalizaciju i pravila parkiranja.',
+        parkingBtn1:'Otvori Mepas Mall',
+        parkingBtn2:'Otvori zonu ulice',
+        essentialsTitle:'Wi‑Fi, sadržaji i kućna pravila',
+        essentialsIntro:'Najčešće korištene informacije grupirane su zajedno radi bržeg pregleda na mobitelu.',
+        wifiTitle:'Wi‑Fi',
+        wifiList:['Mreža: MoRent Apartments','Lozinka: 27596057','Besplatan internet dostupan je u apartmanu'],
+        amenitiesTitle:'Sadržaji',
+        amenitiesList:['Klima uređaj za grijanje i hlađenje','2 LCD televizora s besplatnim Netflixom','Aparat za kavu','Hladnjak s mini zamrzivačem','Pećnica s ugrađenom mikrovalnom','Ploča za kuhanje','Perilica suđa','Kuhalo za vodu','Perilica rublja','Glačalo, daska za glačanje i stalak za sušenje','Sušilo za kosu','Dodatna posteljina i jastuci u ormaru','Dodatni ručnici u ormariću u kupaonici'],
+        rulesTitle:'Kućna pravila',
+        rulesList:['Pušenje u apartmanu nije dopušteno','Kućni ljubimci nisu dopušteni','Ako koristite kauč na razvlačenje, dodatnu posteljinu gost sam postavlja','Ključ i plavi čip čuvajte tijekom boravka'],
+        checkoutTitle:'Odjava i plaćanje',
+        checkoutIntro:'Jednostavni koraci pri odlasku olakšavaju pripremu apartmana za sljedećeg gosta.',
+        checkoutA:'Prije odlaska',
+        checkoutList:['Odjava je do 11:00','Vratite ključ u isti mini sef','Nakon zaključavanja promiješajte brojeve na sefu','Ponesite sve osobne stvari','Ostavite apartman urednim prije odlaska'],
+        checkoutB:'Plaćanje u objektu',
+        checkoutBX:'Ako vam odgovara, novac možete ostaviti na noćnom ormariću u spavaćoj sobi pri odjavi. Ako želite platiti osobno, unaprijed kontaktirajte domaćine.',
+        checkoutNote:'Molimo imajte na umu vrijeme odjave u 11:00 čak i kada se plaćanje dogovara osobno.',
+        exploreTitle:'Obližnje atrakcije i preporuke',
+        exploreIntro:'Korisne preporuke za praktičnost i lokalno iskustvo.',
+        exploreA:'Atrakcije u blizini',
+        exploreAT:['Stari most Mostar','Kujundžiluk bazar','Muslibegovića kuća','Mepas Mall za kupovinu, kino i praktičan parking'],
+        exploreB:'Ideje za hranu u blizini',
+        exploreBT:['Restoran Bura','Blok bar & restaurant','88brunch&bar','MEGI Le Petit Restaurant','Del Rio'],
+        qrTitle:'Plan za QR kod',
+        qrIntro:'Omogućite jednostavan pristup vodiču povezivanjem putem tiskanih materijala i apartmana.',
+        qrA:'Preporučena QR strategija',
+        qrAX:'Koristite jedan glavni QR kod za cijeli vodič nakon objave stranice. Postavite ga na karticu uz krevet, u okvir ili u poruku za prijavu.',
+        qrAL:['Glavna namjena: cijeli vodič za goste','Dodatni QR: samo video za ulaz','Dodatni QR: Wi‑Fi i kontakt kartica'],
+        qrB:'Blok rezerviran za QR',
+        qrBX:'Ovaj dio kasnije može sadržavati konačnu skenirajuću QR sliku za GitHub Pages adresu uživo.',
+        qrPH1:'Mjesto za QR kod',
+        qrPH2:'Zamijenite konačnim QR kodom nakon objave',
+        contactTitle:'Kontakti i hitni brojevi',
+        contactIntro:'Važni podaci za podršku trebaju biti vidljivi i jednostavni za dodir.',
+        contactA:'Maria',
+        contactB:'Damir',
+        contactC:'Hitni brojevi',
+        emergency:['Opći hitni broj: 112','Policija: 122','Vatrogasci: 123','Hitna pomoć: 124'],
+        faqTitle:'Česta pitanja',
+        faqIntro:'Brzi odgovori na najčešća pitanja gostiju.',
+        faq:[
+          ['Kada je prijava?','Prijava je moguća od 14:00.'],
+          ['Gdje su ključevi?','Ključevi se nalaze u označenom mini sefu kod ulaza i poštanskih sandučića.'],
+          ['Kako ulazim u zgradu?','Koristite plavi čip na ključu i prislonite ga na predviđeni čitač/interfon.'],
+          ['Koja je Wi‑Fi lozinka?','Wi‑Fi mreža je MoRent Apartments, a lozinka je 27596057.'],
+          ['Kada je odjava?','Odjava je u 11:00. Vratite ključ u isti mini sef i promiješajte brojeve na kombinaciji.'],
+          ['Je li moguće platiti u objektu?','Da. Gosti mogu ostaviti novac na noćnom ormariću ili dogovoriti osobno plaćanje s domaćinima.']
+        ],
+        footerLeft:'Luksuzni dvojezični vodič za goste spreman za objavu i optimiziran za mobitel.',
+        footerRight:'Savjet: nakon objave dodajte konačni QR kod i podijelite ovaj vodič u porukama prije dolaska.',
+        mbarMap:'Karta',mbarCall:'Poziv',mbarWifi:'Wi‑Fi'
+      }
+    };
+
+    const ids=['topbar-subtitle','hero-eyebrow','hero-title','hero-text','hero-badge','hero-cta-map','hero-cta-arrival','overview-title','overview-intro','overview-card-a-title','overview-card-a-text','overview-card-b-title','gallery-title','gallery-intro','gallery-cap-1','gallery-cap-2','gallery-cap-3','arrival-title','arrival-intro','arrival-step-1-title','arrival-step-1-text','arrival-step-2-title','arrival-step-2-text','arrival-step-3-title','arrival-step-3-text','arrival-note','video-title','video-intro','video-placeholder-title','video-placeholder-text','video-chip-1','video-chip-2','location-title','location-intro','location-card-title','location-card-text','location-btn-1','location-btn-2','parking-title','parking-intro','parking-card-a-title','parking-card-b-title','parking-card-b-text','parking-btn-1','parking-btn-2','essentials-title','essentials-intro','wifi-title','amenities-title','rules-title','checkout-title','checkout-intro','checkout-card-a-title','checkout-card-b-title','checkout-card-b-text','checkout-note','explore-title','explore-intro','explore-card-a-title','explore-card-b-title','qr-title','qr-intro','qr-card-a-title','qr-card-a-text','qr-card-b-title','qr-card-b-text','qr-placeholder-title','qr-placeholder-text','contact-title','contact-intro','contact-card-a-title','contact-card-b-title','contact-card-c-title','faq-title','faq-intro','footer-left','footer-right','mbar-map','mbar-call','mbar-wifi'];
+
+    function list(id,items){document.getElementById(id).innerHTML=items.map(i=>`<li>${i}</li>`).join('')}
+    function chips(id,items){document.getElementById(id).innerHTML=items.map(i=>`<span class="chip">${i}</span>`).join('')}
+    function faq(items){
+      const el=document.getElementById('faq-list');
+      el.innerHTML=items.map((f,i)=>`<article class="card faq-item ${i===0?'open':''}"><button class="faq-q"><span>${f[0]}</span><span>＋</span></button><div class="faq-a">${f[1]}</div></article>`).join('');
+      el.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open')))
+    }
+    function quick(items){
+      document.getElementById('quick-grid').innerHTML=items.map(i=>`<article class="card mini-card"><div class="icon-box">${i[0]}</div><h3>${i[1]}</h3><p class="subtle">${i[2]}</p></article>`).join('')
+    }
+    function setLang(lang){
+      const t=data[lang];
+      document.documentElement.lang=lang;
+      document.title=t.title;
+      document.querySelector('meta[name="description"]').setAttribute('content',t.desc);
+      document.querySelector('meta[property="og:title"]').setAttribute('content',t.title);
+      document.querySelector('meta[property="og:description"]').setAttribute('content',t.desc);
+      document.querySelectorAll('.nav-links a').forEach((a,i)=>a.textContent=t.nav[i]);
+      document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+      document.getElementById('topbar-subtitle').textContent=t.topbarSubtitle;
+      document.getElementById('hero-eyebrow').textContent=t.heroEyebrow;
+      document.getElementById('hero-title').textContent=t.heroTitle;
+      document.getElementById('hero-text').textContent=t.heroText;
+      chips('hero-chips',t.heroChips);
+      document.getElementById('hero-cta-map').textContent=t.heroCtaMap;
+      document.getElementById('hero-cta-arrival').textContent=t.heroCtaArrival;
+      document.getElementById('hero-badge').textContent=t.heroBadge;
+      quick(t.quick);
+      document.getElementById('overview-title').textContent=t.overviewTitle;
+      document.getElementById('overview-intro').textContent=t.overviewIntro;
+      document.getElementById('overview-card-a-title').textContent=t.overviewA1;
+      document.getElementById('overview-card-a-text').textContent=t.overviewA2;
+      chips('overview-card-a-chips',t.overviewChips);
+      document.getElementById('overview-card-b-title').textContent=t.overviewB1;
+      list('overview-card-b-list',t.overviewBList);
+      document.getElementById('gallery-title').textContent=t.galleryTitle;
+      document.getElementById('gallery-intro').textContent=t.galleryIntro;
+      document.getElementById('gallery-cap-1').textContent=t.galleryCaps[0];
+      document.getElementById('gallery-cap-2').textContent=t.galleryCaps[1];
+      document.getElementById('gallery-cap-3').textContent=t.galleryCaps[2];
+      document.getElementById('arrival-title').textContent=t.arrivalTitle;
+      document.getElementById('arrival-intro').textContent=t.arrivalIntro;
+      document.getElementById('arrival-step-1-title').textContent=t.arrival1T;
+      document.getElementById('arrival-step-1-text').textContent=t.arrival1X;
+      document.getElementById('arrival-step-2-title').textContent=t.arrival2T;
+      document.getElementById('arrival-step-2-text').textContent=t.arrival2X;
+      document.getElementById('arrival-step-3-title').textContent=t.arrival3T;
+      document.getElementById('arrival-step-3-text').textContent=t.arrival3X;
+      document.getElementById('arrival-note').textContent=t.arrivalNote;
+      document.getElementById('video-title').textContent=t.videoTitle;
+      document.getElementById('video-intro').textContent=t.videoIntro;
+      document.getElementById('video-placeholder-title').textContent=t.videoPH1;
+      document.getElementById('video-placeholder-text').textContent=t.videoPH2;
+      document.getElementById('video-chip-1').textContent=t.videoChip1;
+      document.getElementById('video-chip-2').textContent=t.videoChip2;
+      document.getElementById('location-title').textContent=t.locationTitle;
+      document.getElementById('location-intro').textContent=t.locationIntro;
+      document.getElementById('location-card-title').textContent=t.locationCardT;
+      document.getElementById('location-card-text').innerHTML=t.locationCardX;
+      chips('location-card-chips',t.locationChips);
+      document.getElementById('location-btn-1').textContent=t.locationBtn1;
+      document.getElementById('location-btn-2').textContent=t.locationBtn2;
+      document.getElementById('parking-title').textContent=t.parkingTitle;
+      document.getElementById('parking-intro').textContent=t.parkingIntro;
+      document.getElementById('parking-card-a-title').textContent=t.parkingA;
+      list('parking-list',t.parkingList);
+      document.getElementById('parking-card-b-title').textContent=t.parkingB;
+      document.getElementById('parking-card-b-text').textContent=t.parkingBX;
+      document.getElementById('parking-btn-1').textContent=t.parkingBtn1;
+      document.getElementById('parking-btn-2').textContent=t.parkingBtn2;
+      document.getElementById('essentials-title').textContent=t.essentialsTitle;
+      document.getElementById('essentials-intro').textContent=t.essentialsIntro;
+      document.getElementById('wifi-title').textContent=t.wifiTitle;
+      list('wifi-list',t.wifiList);
+      document.getElementById('amenities-title').textContent=t.amenitiesTitle;
+      list('amenities-list',t.amenitiesList);
+      document.getElementById('rules-title').textContent=t.rulesTitle;
+      list('rules-list',t.rulesList);
+      document.getElementById('checkout-title').textContent=t.checkoutTitle;
+      document.getElementById('checkout-intro').textContent=t.checkoutIntro;
+      document.getElementById('checkout-card-a-title').textContent=t.checkoutA;
+      list('checkout-list',t.checkoutList);
+      document.getElementById('checkout-card-b-title').textContent=t.checkoutB;
+      document.getElementById('checkout-card-b-text').textContent=t.checkoutBX;
+      document.getElementById('checkout-note').textContent=t.checkoutNote;
+      document.getElementById('explore-title').textContent=t.exploreTitle;
+      document.getElementById('explore-intro').textContent=t.exploreIntro;
+      document.getElementById('explore-card-a-title').textContent=t.exploreA;
+      list('explore-attractions',t.exploreAT);
+      document.getElementById('explore-card-b-title').textContent=t.exploreB;
+      list('explore-food',t.exploreBT);
+      document.getElementById('qr-title').textContent=t.qrTitle;
+      document.getElementById('qr-intro').textContent=t.qrIntro;
+      document.getElementById('qr-card-a-title').textContent=t.qrA;
+      document.getElementById('qr-card-a-text').textContent=t.qrAX;
+      list('qr-card-a-list',t.qrAL);
+      document.getElementById('qr-card-b-title').textContent=t.qrB;
+      document.getElementById('qr-card-b-text').textContent=t.qrBX;
+      document.getElementById('qr-placeholder-title').textContent=t.qrPH1;
+      document.getElementById('qr-placeholder-text').textContent=t.qrPH2;
+      document.getElementById('contact-title').textContent=t.contactTitle;
+      document.getElementById('contact-intro').textContent=t.contactIntro;
+      document.getElementById('contact-card-a-title').textContent=t.contactA;
+      document.getElementById('contact-card-b-title').textContent=t.contactB;
+      document.getElementById('contact-card-c-title').textContent=t.contactC;
+      list('emergency-list',t.emergency);
+      document.getElementById('faq-title').textContent=t.faqTitle;
+      document.getElementById('faq-intro').textContent=t.faqIntro;
+      faq(t.faq);
+      document.getElementById('footer-left').textContent=t.footerLeft;
+      document.getElementById('footer-right').textContent=t.footerRight;
+      document.getElementById('mbar-map').textContent=t.mbarMap;
+      document.getElementById('mbar-call').textContent=t.mbarCall;
+      document.getElementById('mbar-wifi').textContent=t.mbarWifi;
+      localStorage.setItem('morent-lang-v2',lang);
+    }
+    document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+    setLang(localStorage.getItem('morent-lang-v2')||'en');
+  </script>
+</body>
+</html>
